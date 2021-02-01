@@ -10,14 +10,14 @@ class Box {
         this.height = height;
         this.x = x;
         this.y = y;
-        this.visiblity =255;
+        this.visibility =255;
         World.add(world, this.body);
     }
 
 display() {
     var pos = this.body.position;
     var angle = this.body.angle;
-    if (this.body.speed<7) {
+    if (this.body.speed<8) {
         push();
         translate(pos.x, pos.y);
         rotate(angle);
@@ -27,7 +27,7 @@ display() {
     } else {
         push ();
             World.remove(world,this.body);
-            this.visiblity = this.visiblity-5
+            this.visibility = this.visibility-1;
             tint(255,this.visiblity)
         pop();
         
